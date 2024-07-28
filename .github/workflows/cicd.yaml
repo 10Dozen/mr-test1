@@ -48,7 +48,7 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v44
 
-      - name: Run custom App
+      - name: Run custom App 2
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |

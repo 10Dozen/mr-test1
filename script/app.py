@@ -15,7 +15,7 @@ if __name__ == '__main__':
     os.mkdir(tgt_dir)
     with open(os.path.join(tgt_dir, "index.html"), "w", encoding="utf-8") as f:
         f.write("<html>\n")
-        f.write(f"<head><script src='data.js'</script><script src='issue.js'</script><title>{mission_name}</title></head>\n")
+        f.write(f"<head><script src='data.js'></script><script src='issue.js'></script><title>{mission_name}</title></head>\n")
         f.write("<body><h1>Hello, world! At " + str(datetime.datetime.now()) + "</h1></body>");
         f.write("</html>\n")
 
