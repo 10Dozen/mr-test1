@@ -1,14 +1,12 @@
 ---
-title: "Mision name"
+title: {{ env.ISSUE_TITLE }}
 labels: ["tracking issue"]
 ---
 
 #### Миссия:
-- Ссылка
+- [Ссылка](https://10dozen.github.io/mr-test1/{{ env.ISSUE_LINK_TO_PAGE }}]
 
 #### Описание 
-Краткое описание
+{{ env.ISSUE_DESC }}
 
-{{ actor }}
-
-{{ payload.update_existing }}
+by {{ actor }}
