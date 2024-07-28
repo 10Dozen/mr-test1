@@ -37,14 +37,20 @@ jobs:
         run: echo Hello, world!
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
       #- name: Install dependencies
       #  run: pip install mkdocs mkdocs-material
+      
+      - name: Get changed files 
+        id: changed-files
+        uses: tj-actions/changed-files@v44
 
       - name: Run custom App
+        env:
+          ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
           python script/app.py
 
@@ -79,10 +85,10 @@ jobs:
           cat "./site/$REVIEW_DIR/issue.js"
 
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./site
 
@@ -105,4 +111,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
