@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser(
                     description='What the program does',
                     epilog='Text at the bottom of help')
 
-parser.add_argument('-f', action="store", dest='file', default=None)
+parser.add_argument('filename') 
 
 
 # Read ISSUE 
@@ -52,20 +52,20 @@ def do_stuff(file):
 
 if __name__ == '__main__':
     args = parser.parse_args()
-    print(args.file)
+    print(args.filename)
     
     parse_required = True
-    if not args.file:
+    if not args.filename:
         print("No file... ignore")
         parse_required = False
     
-    if len(args.file.split(os.path.sep)) > 0:
+    if len(args.filename.split(os.path.sep)) > 0:
         print("Some nested files... ignore")
         parse_required - False
     
     
     if parse_required:
         print("Parsing!")
-        do_stuff(args.file)
+        do_stuff(args.filename)
         
     print("App finished!")
