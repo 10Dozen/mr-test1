@@ -39,7 +39,7 @@ jobs:
           
       - name: Run ls -la
         run: |
-          ls 
+          ls -la
           
       - name: Run custom App 
         run: |
