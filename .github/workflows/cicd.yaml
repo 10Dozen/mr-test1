@@ -52,14 +52,11 @@ jobs:
       - name: Run ls 
         run: |
           ls -la site
+          cat envvars
       # Runs a set of commands using the runners shell
       - name: Set envvars
         run: |
-          echo "ISSUE_TITLE=My Mission Title" >> $GITHUB_ENV
-          touch envs
-          echo "ISSUE_LINK_TO_PAGE=page.html" >> envs
-          echo "ISSUE_DESC=Mission description" >> envs
-          cat envs >> $GITHUB_ENV 
+          cat envvars >> $GITHUB_ENV 
           
       - name: Read envvars
         run: |  
@@ -72,9 +69,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ADJECTIVE: great
-         # ISSUE_TITLE: Some title          
-         # ISSUE_LINK_TO_PAGE: page.html
-         # ISSUE_DESC: Desc
         with:
           update_existing: true
           search_existing: all
@@ -86,7 +80,7 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./site
 

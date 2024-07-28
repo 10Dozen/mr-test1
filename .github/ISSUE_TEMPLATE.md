@@ -1,10 +1,10 @@
 ---
 title: Mission name
-labels: ["tracking issue"]
+labels: ["требуется ревью"]
 ---
 
 #### Миссия:
-- [Ссылка](https://10dozen.github.io/mr-test1/{{ env.ISSUE_LINK_TO_PAGE }}]
+- [Ссылка](https://10dozen.github.io/mr-test1/{{ env.ISSUE_LINK_TO_PAGE }})
 
 #### Описание 
 {{ env.ISSUE_TITLE }}
