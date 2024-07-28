@@ -21,7 +21,7 @@ if __name__ == '__main__':
         f.write('var data = {"name": 123}')
         
     with open("./envvars", "w", encoding="utf-8") as f:
-        f.write("TARGET_DIR=" + tgt_dir_name)
+        f.write("REVIEW_DIR=" + tgt_dir_name)
 
     with open("./.github/ISSUE_TEMPLATE.md", "w", encoding="utf-8") as f:
         f.write("---\n")
@@ -30,7 +30,7 @@ if __name__ == '__main__':
         f.write("---\n")
         f.write("\n")
         f.write("### Миссия:\n")
-        f.write("- [Ссылка]({{ env.PAGES_BASE_URL }}/{{ env.TARGET_DIR }}/index.html)\n")
+        f.write("- [Ссылка]({{ env.PAGES_BASE_URL }}/{{ env.REVIEW_DIR }}/index.html)\n")
         f.write("### Описание \n")
         f.write(f"{description}\n")
         f.write("### Автор:\n")

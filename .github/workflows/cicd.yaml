@@ -50,13 +50,18 @@ jobs:
 
       - name: Read results
         run: |
+          echo "Env vars:\n"
           cat envvars
           cat envvars >> $GITHUB_ENV
+          echo "$REVIEW_DIR"
+          
+          echo "\nTemplate:\n"
           cat .github/ISSUE_TEMPLATE.md
           
-          ls -la ./site/$TARGET_DIR
-          cat ./site/$TARGET_DIR/data.js
-          cat ./site/$TARGET_DIR/index.html
+          echo "\Review Dir: $REVIEW_DIR\n"
+          ls -la "./site/$REVIEW_DIR"
+          cat "./site/$REVIEW_DIR/data.js"
+          cat "./site/$REVIEW_DIR/index.html"
 
       - name: Create an issue
         uses: JasonEtco/create-an-issue@v2.9.2
