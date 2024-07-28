@@ -1,5 +1,5 @@
 ---
-title: Mission name
+title: {{ env.ISSUE_TITLE }}
 labels: ["требуется ревью"]
 ---
 
