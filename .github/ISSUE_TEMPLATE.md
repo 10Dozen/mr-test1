@@ -8,3 +8,7 @@ labels: ["tracking issue"]
 
 #### Описание 
 Краткое описание
+
+{{ workflow }}
+
+{{ payload }}

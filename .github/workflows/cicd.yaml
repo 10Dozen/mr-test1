@@ -60,9 +60,14 @@ jobs:
 
       - name: Create an issue
         uses: JasonEtco/create-an-issue@v2.9.2
-        #uses: jayalfredprufrock/create-issues-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          update_existing: true
+          search_existing: all
+        id: create-issue
+        
+      - run: 'echo Created ${{ steps.create-issue.outputs.url }}'
         
       - name: Setup Pages
         uses: actions/configure-pages@v3
