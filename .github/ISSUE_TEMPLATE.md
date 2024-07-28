@@ -1,10 +1,7 @@
 ---
 name: Ревью
-about: Describe this issue template's purpose here.
-title: MY_MISSION
+title: MY MISSION
 labels: требуется ревью
-assignees: ''
-
 ---
 
 #### Миссия:
