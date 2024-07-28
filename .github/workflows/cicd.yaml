@@ -75,7 +75,6 @@ jobs:
         
       - name: Save issue URL
         run: |
-          'echo Created ${{ steps.create-issue.outputs.url }}'
           echo "var issueUrl = '${{ steps.create-issue.outputs.url }}'" > "./site/$REVIEW_DIR/issue.js"
           cat "./site/$REVIEW_DIR/issue.js"
 
