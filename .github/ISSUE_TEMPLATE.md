@@ -1,7 +1,7 @@
 ---
 name: Ревью
 about: Describe this issue template's purpose here.
-title: {{ payload.sender.login }}
+title: MY_MISSION
 labels: требуется ревью
 assignees: ''
 
