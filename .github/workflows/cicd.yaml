@@ -37,7 +37,7 @@ jobs:
       #  run: pip install mkdocs mkdocs-material 
           
           
-      - name: Run ls 
+      - name: Run ls -la
         run: |
           ls 
           
