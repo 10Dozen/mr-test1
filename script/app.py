@@ -2,6 +2,11 @@ import os
 import datetime 
 import argparse
 
+parser = argparse.ArgumentParser(
+                    prog='ProgramName',
+                    description='What the program does',
+                    epilog='Text at the bottom of help')
+
 parser.add_argument('-f', action="store", dest='file', default=None)
 
 
