@@ -18,7 +18,7 @@ permissions:
 
 
 env:
-   PAGES_BASE_URL: https://10dozen.github.io/mr-test1/
+   PAGES_BASE_URL: https://10dozen.github.io/mr-test1
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -56,8 +56,6 @@ jobs:
           
       - name: Read results
         run: |
-          echo "$REVIEW_DIR"
-          
           echo "Template:"
           cat .github/ISSUE_TEMPLATE.md
           
@@ -78,7 +76,7 @@ jobs:
       - name: Save issue URL
         run: |
           'echo Created ${{ steps.create-issue.outputs.url }}'
-          echo "var issueUrl = '${{ steps.create-issue.outputs.url }}'" > ./site/$REVIEW_DIR/issue.js
+          echo "var issueUrl = '${{ steps.create-issue.outputs.url }}'" > "./site/$REVIEW_DIR/issue.js"
           cat ./site/$REVIEW_DIR/issue.js
 
       - name: Setup Pages
@@ -92,20 +90,20 @@ jobs:
 
 
 
-  # deploy:
-    # if: github.ref == 'refs/heads/main'
-    # runs-on: ubuntu-latest
-    # needs: build
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: build
 
-    # permissions:
-      # pages: write
-      # id-token: write
+    permissions:
+      pages: write
+      id-token: write
 
-    # environment:
-      # name: github-pages
-      # url: ${{ steps.deployment.outputs.page_url }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-    # steps:
-      # - name: Deploy to GitHub Pages
-        # id: deployment
-        # uses: actions/deploy-pages@v2
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
