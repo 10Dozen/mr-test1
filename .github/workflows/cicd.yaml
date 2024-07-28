@@ -52,7 +52,9 @@ jobs:
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
-          python script/app.py
+          for file in ${ALL_CHANGED_FILES}; do
+            python script/app.py file
+          done
 
       - name: Read envvars
         run: |

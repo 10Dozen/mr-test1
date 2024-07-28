@@ -1,9 +1,23 @@
 import os
 import datetime 
+import argparse
+
+parser.add_argument('-f', action="store", dest='file', default=None)
+
 
 # Read ISSUE 
 # $.getJSON("https://raw.githubusercontent.com/10Dozen/mr-test1/main/site/test.json",e=>{ console.log(e)})
 if __name__ == '__main__':
+    args = parser.parse_args()
+    if not args.file:
+        print("No file... ignore")
+        return
+    
+    if len args.file.split(os.path.sep) > 0:
+        print("Some nested files... ignore")
+        return
+    print(args.file)
+    
     print(os.environ.get('ALL_CHANGED_FILES'))
 
     mission_name = "CO33 Test Mission"
