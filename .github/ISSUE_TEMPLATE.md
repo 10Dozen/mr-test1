@@ -1,11 +1,12 @@
 ---
-name: Ревью
-title: MY MISSION
-labels: требуется ревью
+name: Review
+about: Use this template for tracking new features.
+title: "Mision name"
+labels: tracking issue, needs triage
 ---
 
 #### Миссия:
-- Ссылка_на_файл_архива_миссии
+- Ссылка
 
 #### Описание 
-Краткое_описание_миссии_для_истории_и_поиска
+Краткое описание
