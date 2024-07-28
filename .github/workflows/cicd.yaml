@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: 
+    branches:
       - main
 
   # Allows you to run this workflow manually from the Actions tab
@@ -31,38 +31,23 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-        
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-          
+
       #- name: Install dependencies
-      #  run: pip install mkdocs mkdocs-material 
-          
-          
-      - name: Run ls -la
-        run: |
-          ls -la .github
-          
-      - name: Run custom App 
+      #  run: pip install mkdocs mkdocs-material
+
+      - name: Run custom App
         run: |
           python script/app.py
-          
-      - name: Run ls 
+
+      - name: Read results
         run: |
           ls -la site
-          cat envvars
-      # Runs a set of commands using the runners shell
-      - name: Set envvars
-        run: |
-          cat envvars >> $GITHUB_ENV 
-          
-      - name: Read envvars
-        run: |  
-          echo $ISSUE_TITLE
-          echo $ISSUE_LINK_TO_PAGE
-          echo $ISSUE_DESC
+          cat .github/ISSUE_TEMPLATE.md
 
       - name: Create an issue
         uses: JasonEtco/create-an-issue@v2.9.2
@@ -72,9 +57,9 @@ jobs:
           update_existing: true
           search_existing: all
         id: create-issue
-        
+
       - run: 'echo Created ${{ steps.create-issue.outputs.url }}'
-        
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
@@ -85,7 +70,7 @@ jobs:
 
 
 
-  
+
   # deploy:
     # if: github.ref == 'refs/heads/main'
     # runs-on: ubuntu-latest
@@ -103,4 +88,3 @@ jobs:
       # - name: Deploy to GitHub Pages
         # id: deployment
         # uses: actions/deploy-pages@v2
-  
