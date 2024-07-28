@@ -16,25 +16,25 @@ if __name__ == '__main__':
         f.write(f"<head><script='data.js'/><script='issue.js'/><title>{mission_name}</title></head>\n")
         f.write("<body><h1>Hello, world! At " + str(datetime.datetime.now()) + "</h1></body>");
         f.write("</html>\n")
-	
+
     with open(os.path.join(tgt_dir, "data.js"), "w", encoding="utf-8") as f:
         f.write('var data = {"name": 123}')
         
     with open("./envvars", "w", encoding="utf-8") as f:
         f.write("TARGET_DIR=" + tgt_dir_name)
- 
-	with open("./.github/ISSUE_TEMPLATE.md", "w", encoding="utf-8") as f:
-		f.write("---\n")
-		f.write(f"title: {mission_name}\n")
-		f.write('labels: ["требуется ревью"]\n')
-		f.write("---\n")
-		f.write("\n")
-		f.write("### Миссия:\n")
-		f.write("- [Ссылка]({{ env.PAGES_BASE_URL }}/{{ env.TARGET_DIR }}/index.html)\n")
-		f.write("### Описание \n")
-		f.write(f"{description}\n")
-		f.write("### Автор:\n")
-		f.write("{{ actor }}\n")
-		f.write("\n")
+
+    with open("./.github/ISSUE_TEMPLATE.md", "w", encoding="utf-8") as f:
+        f.write("---\n")
+        f.write(f"title: {mission_name}\n")
+        f.write('labels: ["требуется ревью"]\n')
+        f.write("---\n")
+        f.write("\n")
+        f.write("### Миссия:\n")
+        f.write("- [Ссылка]({{ env.PAGES_BASE_URL }}/{{ env.TARGET_DIR }}/index.html)\n")
+        f.write("### Описание \n")
+        f.write(f"{description}\n")
+        f.write("### Автор:\n")
+        f.write("{{ actor }}\n")
+        f.write("\n")
         
     print("App finished!")

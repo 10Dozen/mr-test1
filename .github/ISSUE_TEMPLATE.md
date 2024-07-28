@@ -1,13 +1,12 @@
 ---
-title: Mission name
+title: CO33 Test Mission
 labels: ["требуется ревью"]
 ---
 
-#### Миссия:
-- [Ссылка](https://10dozen.github.io/mr-test1/{{ env.ISSUE_LINK_TO_PAGE }})
+### Миссия:
+- [Ссылка]({{ env.PAGES_BASE_URL }}/{{ env.TARGET_DIR }}/index.html)
+### Описание 
+My custom description for the mission
+### Автор:
+{{ actor }}
 
-#### Описание 
-{{ env.ISSUE_TITLE }}
-{{ env.ISSUE_DESC }}
-
-by {{ actor }}
