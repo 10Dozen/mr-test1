@@ -48,17 +48,20 @@ jobs:
         run: |
           python script/app.py
 
-      - name: Read results
+      - name: Read envvars
         run: |
-          echo "Env vars:\n"
+          echo "Env vars:"
           cat envvars
           cat envvars >> $GITHUB_ENV
+          
+      - name: Read results
+        run: |
           echo "$REVIEW_DIR"
           
-          echo "\nTemplate:\n"
+          echo "Template:"
           cat .github/ISSUE_TEMPLATE.md
           
-          echo "\Review Dir: $REVIEW_DIR\n"
+          echo "Review Dir: $REVIEW_DIR"
           ls -la "./site/$REVIEW_DIR"
           cat "./site/$REVIEW_DIR/data.js"
           cat "./site/$REVIEW_DIR/index.html"
@@ -75,8 +78,8 @@ jobs:
       - name: Save issue URL
         run: |
           'echo Created ${{ steps.create-issue.outputs.url }}'
-          echo "var issueUrl = '${{ steps.create-issue.outputs.url }}'" > ./site/$TARGET_DIR/issue.js
-          cat ./site/$TARGET_DIR/issue.js
+          echo "var issueUrl = '${{ steps.create-issue.outputs.url }}'" > ./site/$REVIEW_DIR/issue.js
+          cat ./site/$REVIEW_DIR/issue.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
