@@ -12,6 +12,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+
+permissions:
+    issues: write
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -56,6 +60,7 @@ jobs:
 
       - name: Create an issue
         uses: JasonEtco/create-an-issue@v2.9.2
+        #uses: jayalfredprufrock/create-issues-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
