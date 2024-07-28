@@ -7,6 +7,7 @@ labels: ["tracking issue"]
 - [Ссылка](https://10dozen.github.io/mr-test1/{{ env.ISSUE_LINK_TO_PAGE }}]
 
 #### Описание 
-{{ env.ADJECTIVE }}
+{{ env.ISSUE_TITLE }}
+{{ env.ISSUE_DESC }}
 
 by {{ actor }}

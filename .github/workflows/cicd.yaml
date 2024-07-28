@@ -72,9 +72,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ADJECTIVE: great
-          ISSUE_TITLE: Some title          
-          ISSUE_LINK_TO_PAGE: page.html
-          ISSUE_DESC: Desc
+         # ISSUE_TITLE: Some title          
+         # ISSUE_LINK_TO_PAGE: page.html
+         # ISSUE_DESC: Desc
         with:
           update_existing: true
           search_existing: all
