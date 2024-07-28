@@ -9,6 +9,6 @@ labels: ["tracking issue"]
 #### Описание 
 Краткое описание
 
-{{ workflow }}
+{{ actor }}
 
-{{ payload }}
+{{ payload.update_existing }}
