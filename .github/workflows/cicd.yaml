@@ -54,6 +54,12 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
+      - name: Create an issue
+        uses: JasonEtco/create-an-issue@v2.9.2
+        with:
+          update_existing: true 
+          search_existing: all
+        
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
@@ -61,6 +67,8 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./site
+
+
 
 
   deploy:
