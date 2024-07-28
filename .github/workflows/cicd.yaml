@@ -16,6 +16,10 @@ on:
 permissions:
     issues: write
 
+
+env:
+   PAGES_BASE_URL: https://10dozen.github.io/mr-test1/
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -46,8 +50,13 @@ jobs:
 
       - name: Read results
         run: |
-          ls -la site
+          cat envvars
+          cat envvars >> $GITHUB_ENV
           cat .github/ISSUE_TEMPLATE.md
+          
+          ls -la ./site/$TARGET_DIR
+          cat ./site/$TARGET_DIR/data.js
+          cat ./site/$TARGET_DIR/index.html
 
       - name: Create an issue
         uses: JasonEtco/create-an-issue@v2.9.2
@@ -57,8 +66,12 @@ jobs:
           update_existing: true
           search_existing: all
         id: create-issue
-
-      - run: 'echo Created ${{ steps.create-issue.outputs.url }}'
+        
+      - name: Save issue URL
+        run: |
+          'echo Created ${{ steps.create-issue.outputs.url }}'
+          echo "var issueUrl = '${{ steps.create-issue.outputs.url }}'" > ./site/$TARGET_DIR/issue.js
+          cat ./site/$TARGET_DIR/issue.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
