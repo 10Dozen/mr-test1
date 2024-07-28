@@ -58,14 +58,13 @@ if __name__ == '__main__':
     if not args.filename:
         print("No file... ignore")
         parse_required = False
-    
+
     if len(args.filename.split(os.path.sep)) > 0:
         print("Some nested files... ignore")
-        parse_required - False
-    
-    
+        parse_required = False
+
     if parse_required:
         print("Parsing!")
         do_stuff(args.filename)
-        
+
     print("App finished!")
