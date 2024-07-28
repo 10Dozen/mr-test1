@@ -13,7 +13,7 @@ if __name__ == '__main__':
         print("No file... ignore")
         return
     
-    if len args.file.split(os.path.sep) > 0:
+    if len(args.file.split(os.path.sep)) > 0:
         print("Some nested files... ignore")
         return
     print(args.file)
