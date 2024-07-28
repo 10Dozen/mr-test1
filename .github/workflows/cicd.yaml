@@ -71,9 +71,9 @@ jobs:
         uses: JasonEtco/create-an-issue@v2.9.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_TITLE: ${{ env.ISSUE_TITLE }}
-          ISSUE_LINK_TO_PAGE: ${{ env.ISSUE_LINK_TO_PAGE }}
-          ISSUE_DESC: ${{ env.ISSUE_DESC }}
+          ISSUE_TITLE: "Some title"
+          ISSUE_LINK_TO_PAGE: "page.html"
+          ISSUE_DESC: "Desc"
         with:
           update_existing: true
           search_existing: all
