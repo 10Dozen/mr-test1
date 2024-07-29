@@ -17,10 +17,10 @@ def do_stuff(file):
     # TODO: use file to parse stuff
     print(os.environ.get('ALL_CHANGED_FILES'))
 
-    mission_name = "CO33 Test Mission"
+    mission_name = "CO33 Test Mission 2"
     description = "My custom description for the mission"
     
-    tgt_dir_name = 'CO33_Test_Mission'
+    tgt_dir_name = 'CO33_Test_Mission2'
     tgt_dir = f"./site/{tgt_dir_name}"
     
     os.mkdir(tgt_dir)
