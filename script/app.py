@@ -23,7 +23,7 @@ def do_stuff(file):
     tgt_dir_name = 'CO33_Test_Mission2'
     tgt_dir = f"./site/{tgt_dir_name}"
 
-    if not os.exists(tgt_dir):
+    if not os.path.exists(tgt_dir):
         os.mkdir(tgt_dir)
     with open(os.path.join(tgt_dir, "index.html"), "w", encoding="utf-8") as f:
         f.write("<html>\n")
