@@ -61,7 +61,7 @@ jobs:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
           ls -la
-          tar -C "site" -x artifact.tar 
+          tar -C "site" -xf artifact.tar 
           for file in ${ALL_CHANGED_FILES}; do
             echo "$file was changed"
             python script/app.py "$file"
