@@ -66,6 +66,7 @@ jobs:
             echo "$file was changed"
             python script/app.py "$file"
           done
+          ls -la site
 
       - name: Read envvars
         run: |
